@@ -1,5 +1,7 @@
-const Missions = () => (
-  <h2>Missions</h2>
+import Missions from '../components/Missions/Missions';
+
+const MissionsPage = () => (
+  <Missions />
 );
 
-export default Missions;
+export default MissionsPage;
