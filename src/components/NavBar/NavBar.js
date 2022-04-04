@@ -1,3 +1,4 @@
+import './navbar.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
@@ -20,12 +21,13 @@ const links = [
 ];
 
 const NavBar = () => (
-  <nav>
-    <div>
+  <nav className="flex">
+    <div className="header flex">
       <img src={logo} alt="corporate logo" />
       <h1>Space Travelers&apos; Hub</h1>
     </div>
-    {
+    <div className="navlinks flex">
+      {
       links.map((link) => (
         <NavLink
           key={link.id}
@@ -35,6 +37,7 @@ const NavBar = () => (
         </NavLink>
       ))
     }
+    </div>
   </nav>
 );
 
