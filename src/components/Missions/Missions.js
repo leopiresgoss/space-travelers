@@ -1,18 +1,16 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getMissionsList } from '../../redux/missions/missions';
+import { useSelector } from 'react-redux';
 
 const Missions = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getMissionsList());
-  }, []);
-
-  // const data = useSelector((state) => state.missions);
+  const missionsList = useSelector((state) => state.missions);
 
   return (
-    <div className="container missions" />
+    <div className="container missions">
+      <ul className="missions-list">
+        {missionsList.map((mission) => (
+          <li key={mission.id}>{`id: ${mission.id}, name: ${mission.name}`}</li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

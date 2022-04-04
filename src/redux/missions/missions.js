@@ -8,8 +8,7 @@ export default function reducer(state = [], action) {
   switch (action.type) {
     case GET_MISSIONS:
       return [
-        ...state,
-        action.payload,
+        ...action.payload,
       ];
     default: return state;
   }
@@ -17,8 +16,12 @@ export default function reducer(state = [], action) {
 
 // Action creators
 export const getMissionsList = () => async (dispatch) => {
-  const payload = await fetchMissionsData();
-  console.log(payload);
+  const data = await fetchMissionsData();
+  const payload = data.map((mission) => ({
+    id: mission.mission_id,
+    name: mission.mission_name,
+    description: mission.description,
+  }));
 
   dispatch({
     type: GET_MISSIONS,
