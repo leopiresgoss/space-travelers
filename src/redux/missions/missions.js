@@ -3,6 +3,7 @@ import fetchMissionsData from '../../services/missionsService';
 // Actions
 const GET_MISSIONS = 'GET_MISSIONS';
 const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
 // Reducer
 export default function reducer(state = [], action) {
@@ -15,6 +16,11 @@ export default function reducer(state = [], action) {
       return state.map((mission) => {
         if (mission.id !== action.id) return mission;
         return { ...mission, reserved: true };
+      });
+    case LEAVE_MISSION:
+      return state.map((mission) => {
+        if (mission.id !== action.id) return mission;
+        return { ...mission, reserved: false };
       });
     default: return state;
   }
@@ -38,5 +44,10 @@ export const getMissionsList = () => async (dispatch) => {
 
 export const joinMission = (id) => ({
   type: JOIN_MISSION,
+  id,
+});
+
+export const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
   id,
 });
