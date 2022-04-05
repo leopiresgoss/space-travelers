@@ -5,7 +5,6 @@ import NavBar from './components/NavBar/NavBar';
 import MissionsPage from './pages/Missions';
 import Profile from './pages/Profile';
 import RocketsPage from './pages/Rockets';
-import { getMissionsList } from './redux/missions/missions';
 import { getRocketsList } from './redux/rockets/rockets';
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRocketsList());
-    dispatch(getMissionsList());
   }, []);
 
   return (
