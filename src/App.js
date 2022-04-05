@@ -4,13 +4,15 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import MissionsPage from './pages/Missions';
 import Profile from './pages/Profile';
-import Rockets from './pages/Rockets';
+import RocketsPage from './pages/Rockets';
 import { getMissionsList } from './redux/missions/missions';
+import { getRocketsList } from './redux/rockets/rockets';
 
 function App() {
   // dispatch the actions
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getRocketsList());
     dispatch(getMissionsList());
   }, []);
 
@@ -18,7 +20,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Rockets />} />
+        <Route path="/" element={<RocketsPage />} />
         <Route path="/missions" element={<MissionsPage />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
