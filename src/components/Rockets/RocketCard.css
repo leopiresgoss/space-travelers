@@ -1,0 +1,32 @@
+.rocket-card {
+  display: flex;
+  gap: 20px;
+}
+
+.rocket-card img {
+  width: 200px;
+}
+
+.info-rocket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rocket-card button {
+  background-color: dodgerblue;
+  color: white;
+  width: 130px;
+  padding: 12px 3px;
+  border-radius: 8px;
+}
+
+@media (max-width: 390px) {
+  .rocket-card {
+    flex-direction: column;
+  }
+
+  .rocket-card img {
+    width: auto;
+  }
+}
