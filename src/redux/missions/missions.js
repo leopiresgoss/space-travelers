@@ -2,6 +2,7 @@ import fetchMissionsData from '../../services/missionsService';
 
 // Actions
 const GET_MISSIONS = 'GET_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
 
 // Reducer
 export default function reducer(state = [], action) {
@@ -10,6 +11,11 @@ export default function reducer(state = [], action) {
       return [
         ...action.payload,
       ];
+    case JOIN_MISSION:
+      return state.map((mission) => {
+        if (mission.id !== action.id) return mission;
+        return { ...mission, reserved: true };
+      });
     default: return state;
   }
 }
@@ -21,6 +27,7 @@ export const getMissionsList = () => async (dispatch) => {
     id: mission.mission_id,
     name: mission.mission_name,
     description: mission.description,
+    reserved: false,
   }));
 
   dispatch({
@@ -28,3 +35,8 @@ export const getMissionsList = () => async (dispatch) => {
     payload,
   });
 };
+
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  id,
+});
