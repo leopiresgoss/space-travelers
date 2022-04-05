@@ -1,10 +1,12 @@
 .rocket-card {
   display: flex;
   gap: 20px;
+  min-height: 180px;
 }
 
 .rocket-card img {
   width: 200px;
+  height: auto;
 }
 
 .info-rocket {
@@ -14,8 +16,7 @@
 }
 
 .reserved-button,
-.cancel-button
- {
+.cancel-button {
   background-color: var(--button-rockets-background, dodgerblue);
   color: var(--button-rockets-color, white);
   width: 150px;

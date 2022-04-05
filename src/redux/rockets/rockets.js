@@ -1,4 +1,4 @@
-import saveToLocalStorage from './localStorage';
+import saveToLocalStorage, { updateReserved } from './localStorage';
 
 const GETROCKETS_BEGIN = 'space-travelers/rockets/GETROCKETSBEGIN';
 const GETROCKETS_SUCCESS = 'space-travelers/rockets/GETROCKETSSUCCESS';
@@ -49,8 +49,9 @@ export default function reducer(state = INITIAL_STATE, action) {
   let newRockets = [];
   switch (action.type) {
     case GETROCKETS_SUCCESS:
+      newRockets = updateReserved(action.payload);
       return {
-        rockets: action.payload,
+        rockets: newRockets,
         fetching: false,
       };
     case GETROCKETS_BEGIN:
