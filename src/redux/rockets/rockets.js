@@ -1,6 +1,10 @@
+import saveToLocalStorage, { updateReserved } from './localStorage';
+
 const GETROCKETS_BEGIN = 'space-travelers/rockets/GETROCKETSBEGIN';
 const GETROCKETS_SUCCESS = 'space-travelers/rockets/GETROCKETSSUCCESS';
 const GETROCKETS_FAILURE = 'space-travelers/rockets/GETROCKETSFAILURE';
+const RESERVEDROCKET = 'space-travelers/rockets/RESERVEDROCKET';
+const CANCELROCKET = 'space-travelers/rockets/CANCELROCKET';
 const BASE_URL = 'https://api.spacexdata.com/v3/rockets';
 
 const INITIAL_STATE = {
@@ -27,11 +31,27 @@ export function getRocketsFailure() {
   };
 }
 
+export function reserveRocket(id) {
+  return {
+    type: RESERVEDROCKET,
+    payload: id,
+  };
+}
+
+export function cancelRocket(id) {
+  return {
+    type: CANCELROCKET,
+    payload: id,
+  };
+}
+
 export default function reducer(state = INITIAL_STATE, action) {
+  let newRockets = [];
   switch (action.type) {
     case GETROCKETS_SUCCESS:
+      newRockets = updateReserved(action.payload);
       return {
-        rockets: action.payload,
+        rockets: newRockets,
         fetching: false,
       };
     case GETROCKETS_BEGIN:
@@ -41,6 +61,26 @@ export default function reducer(state = INITIAL_STATE, action) {
       };
     case GETROCKETS_FAILURE:
       return state;
+    case RESERVEDROCKET:
+      newRockets = state.rockets.map((rocket) => {
+        if (rocket.id !== Number(action.payload)) return rocket;
+        return { ...rocket, reserved: true };
+      });
+      saveToLocalStorage(newRockets);
+      return {
+        ...state,
+        rockets: newRockets,
+      };
+    case CANCELROCKET:
+      newRockets = state.rockets.map((rocket) => {
+        if (rocket.id !== Number(action.payload)) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      saveToLocalStorage(newRockets);
+      return {
+        ...state,
+        rockets: newRockets,
+      };
     default: return state;
   }
 }
