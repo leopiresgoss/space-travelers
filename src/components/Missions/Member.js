@@ -8,7 +8,7 @@ const Member = (props) => {
         <p className="badge bg-info m-0 text-nowrap">ACTIVE MEMBER</p>
       )}
       {!reserved && (
-        <p className="badge bg-secondary m-0 text-nowrap">ACTIVE MEMBER</p>
+        <p className="badge bg-secondary m-0 text-nowrap">NOT A MEMBER</p>
       )}
     </>
   );
