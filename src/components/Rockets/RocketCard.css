@@ -13,7 +13,9 @@
   gap: 10px;
 }
 
-.rocket-card button {
+.reserved-button,
+.cancel-button
+ {
   background-color: var(--button-rockets-background, dodgerblue);
   color: var(--button-rockets-color, white);
   width: 150px;
@@ -32,9 +34,10 @@
   font-size: 0.8rem;
 }
 
-.rocket-card button:hover {
-  font-size: 1.03rem;
-  width: 150px;
+.cancel-button {
+  background-color: var(--button-cancel-rocket-bg);
+  color: var(--button-cancel-rocket-color);
+  border: 1px solid var(--button-cancel-rocket-color);
 }
 
 @media (max-width: 390px) {

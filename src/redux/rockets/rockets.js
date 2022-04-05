@@ -1,3 +1,5 @@
+import saveToLocalStorage from './localStorage';
+
 const GETROCKETS_BEGIN = 'space-travelers/rockets/GETROCKETSBEGIN';
 const GETROCKETS_SUCCESS = 'space-travelers/rockets/GETROCKETSSUCCESS';
 const GETROCKETS_FAILURE = 'space-travelers/rockets/GETROCKETSFAILURE';
@@ -63,6 +65,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         if (rocket.id !== Number(action.payload)) return rocket;
         return { ...rocket, reserved: true };
       });
+      saveToLocalStorage(newRockets);
       return {
         ...state,
         rockets: newRockets,
@@ -72,6 +75,7 @@ export default function reducer(state = INITIAL_STATE, action) {
         if (rocket.id !== Number(action.payload)) return rocket;
         return { ...rocket, reserved: false };
       });
+      saveToLocalStorage(newRockets);
       return {
         ...state,
         rockets: newRockets,

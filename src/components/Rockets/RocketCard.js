@@ -24,8 +24,8 @@ const RocketCard = ({
           {reserved && (<span className="rocket-reserved">Reserved</span>)}
           {description}
         </p>
-        {!reserved && (<button type="button" data-id={id} onClick={onClickReserved}>Reserve Rocket</button>)}
-        {reserved && (<button type="button" data-id={id} onClick={onClickCancel}>Cancel Reservation</button>)}
+        {!reserved && (<button type="button" className="reserved-button" data-id={id} onClick={onClickReserved}>Reserve Rocket</button>)}
+        {reserved && (<button type="button" className="cancel-button" data-id={id} onClick={onClickCancel}>Cancel Reservation</button>)}
       </div>
     </div>
   );
