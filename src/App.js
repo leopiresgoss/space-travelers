@@ -1,22 +1,27 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import NavBar from './components/NavBar/NavBar';
-import Missions from './pages/Missions';
+import MissionsPage from './pages/Missions';
 import Profile from './pages/Profile';
 import Rockets from './pages/Rockets';
-import store from './redux/configureStore';
+import { getMissionsList } from './redux/missions/missions';
 
 function App() {
+  // dispatch the actions
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getMissionsList());
+  }, []);
+
   return (
     <div className="App">
-      <Provider store={store}>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Rockets />} />
-          <Route path="/missions" element={<Missions />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Provider>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/missions" element={<MissionsPage />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
     </div>
   );
 }
