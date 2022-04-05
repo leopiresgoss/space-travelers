@@ -5,6 +5,7 @@ const BASE_URL = 'https://api.spacexdata.com/v3/rockets';
 
 const INITIAL_STATE = {
   rockets: [],
+  fetching: true,
 };
 
 export function getRocketsBegin() {
@@ -31,9 +32,13 @@ export default function reducer(state = INITIAL_STATE, action) {
     case GETROCKETS_SUCCESS:
       return {
         rockets: action.payload,
+        fetching: false,
       };
     case GETROCKETS_BEGIN:
-      return state;
+      return {
+        ...state,
+        fetching: true,
+      };
     case GETROCKETS_FAILURE:
       return state;
     default: return state;
