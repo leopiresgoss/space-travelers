@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
-/* eslint-disable react/prop-types */
 const Mission = (props) => {
   const { mission } = props;
 
@@ -20,6 +20,13 @@ const Mission = (props) => {
       </td>
     </tr>
   );
+};
+
+Mission.propTypes = {
+  mission: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
 };
 
 export default Mission;
