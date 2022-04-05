@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --button-rockets-background: #157ffb;
+  --button-rockets-color: #fff;
+  --badge-rockets-background: #25a1b7;
+  --badge-rockets-color: #fff;
+}
+
 body {
   margin: 0;
   font-family:
