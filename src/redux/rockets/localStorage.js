@@ -7,7 +7,9 @@ export default function saveToLocalStorage(rockets) {
 }
 
 export function updateReserved(rockets) {
-  const reserved = window.localStorage.getItem('ReservedRockets').split(',');
+  let reserved = window.localStorage.getItem('ReservedRockets');
+  if (!reserved) return rockets;
+  reserved = reserved.split(',');
   if (reserved.length === 0) return rockets;
   const newState = rockets.map((rocket) => {
     if (!reserved.includes(String(rocket.id))) return rocket;
