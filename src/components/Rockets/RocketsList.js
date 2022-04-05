@@ -11,6 +11,7 @@ const RocketList = ({ rockets }) => (
           id={rocket.id}
           name={rocket.name}
           description={rocket.description}
+          reserved={rocket.reserved}
           image={rocket.image}
         />
       ))
@@ -24,6 +25,7 @@ RocketList.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
+    reserved: PropTypes.bool,
   })).isRequired,
 };
 export default RocketList;
