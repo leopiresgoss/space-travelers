@@ -1,7 +1,17 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMissionsList } from '../../redux/missions/missions';
 
 const Missions = () => {
+  const dispatch = useDispatch();
   const missionsList = useSelector((state) => state.missions);
+
+  useEffect(() => {
+    // check if the missionList is at the initial state
+    if (missionsList.length === 0) {
+      dispatch(getMissionsList());
+    }
+  }, []);
 
   return (
     <div className="container missions">
