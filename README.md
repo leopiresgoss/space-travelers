@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Space Travelers 
+> A web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- JavaScript
+- React
+- Redux
+- Bootstrap React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
+[SpaceTravelers](https://space-travelers-react.netlify.app/)   
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./spaceTravelers.png" width="100%" height="auto"/>
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get a local copy follow these simple example steps.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1.- Open the terminal window and clone the repository using this command:  
+`git@github.com:leopiresgoss/space-travelers.git` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.- Change the directory to the react-bookstore directory  
+`cd space-travelers`  
+3.- Install the project's dependencies by running this command:   
+`npm install`  
+4.- Generate the dist folder using this command:  
+`npm run build`  
+5.- Run this command to see the page `npm start`  
+6.- To see the code open the project in the code editor of your preference.  
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author
+👤 **Leonardo Pires Goss**
+- GitHub: [@leopiresgoss](https://github.com/leopiresgoss)
+- Twitter: [@leonardopgoss](https://twitter.com/leonardopgoss)
+- Linkedin: [@leonardogoss](https://www.linkedin.com/in/leonardogoss/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Victor Peralta**
+- GitHub: [@VicPeralta](https://github.com/VicPeralta)
+- Twitter: [@VicPeralta](https://twitter.com/VicPeralta)
+- Linkedin: [@VicPeralta](https://www.linkedin.com/in/victor-peralta-gomez-648072107/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🤝 Contributing
 
-## Learn More
+Contributions, issues, and feature requests are welcome!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Feel free to check the [issues page](https://github.com/leopiresgoss/space-travelers/issues).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Show your support
 
-### Code Splitting
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
 
-### Analyzing the Bundle Size
+- A special thank for @fernandorpm for this amazing [README template](https://github.com/microverseinc/readme-template)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 License
 
-### Making a Progressive Web App
+This project is [MIT](./LICENSE.md) licensed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
