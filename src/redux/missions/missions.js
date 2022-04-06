@@ -1,4 +1,5 @@
 import fetchMissionsData from '../../services/missionsService';
+import { fetchReservedMissions, storeReservedMissions } from '../../services/missionLocalStorage';
 
 // Actions
 const GET_MISSIONS = 'GET_MISSIONS';
@@ -28,12 +29,13 @@ export default function reducer(state = [], action) {
 
 // Action creators
 export const getMissionsList = () => async (dispatch) => {
+  const reservedList = fetchReservedMissions();
   const data = await fetchMissionsData();
   const payload = data.map((mission) => ({
     id: mission.mission_id,
     name: mission.mission_name,
     description: mission.description,
-    reserved: false,
+    reserved: reservedList.includes(mission.mission_id),
   }));
 
   dispatch({
@@ -42,12 +44,23 @@ export const getMissionsList = () => async (dispatch) => {
   });
 };
 
-export const joinMission = (id) => ({
-  type: JOIN_MISSION,
-  id,
-});
+export const joinMission = (id) => (dispatch) => {
+  const reservedList = fetchReservedMissions();
+  storeReservedMissions([...reservedList, id]);
 
-export const leaveMission = (id) => ({
-  type: LEAVE_MISSION,
-  id,
-});
+  dispatch({
+    type: JOIN_MISSION,
+    id,
+  });
+};
+
+export const leaveMission = (id) => (dispatch) => {
+  const reservedList = fetchReservedMissions();
+  const reservedListUpdated = reservedList.filter((missionId) => missionId !== id);
+  storeReservedMissions(reservedListUpdated);
+
+  dispatch({
+    type: LEAVE_MISSION,
+    id,
+  });
+};
