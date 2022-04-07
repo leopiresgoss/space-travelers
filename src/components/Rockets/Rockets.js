@@ -6,8 +6,11 @@ const Rockets = () => {
   const fetching = useSelector((state) => state.rocketsReducer.fetching);
   return (
     <>
-      {!fetching && (
+      {!fetching && rocketsList.length !== 0 && (
         <RocketList rockets={rocketsList} />
+      )}
+      {!fetching && rocketsList.length === 0 && (
+        <h3>Something went wrong while fetching the data.</h3>
       )}
       {fetching && (
         <h3>Fetching data please wait...</h3>
