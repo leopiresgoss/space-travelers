@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --button-rockets-background: #157ffb;
+  --button-rockets-color: #fff;
+  --badge-rockets-background: #25a1b7;
+  --badge-rockets-color: #fff;
+  --button-cancel-rocket-bg: #fff;
+  --button-cancel-rocket-color: gray;
+  --badge-border-color: #d3d3d3;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}

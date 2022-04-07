@@ -1,0 +1,52 @@
+.rocket-card {
+  display: flex;
+  gap: 20px;
+  min-height: 180px;
+}
+
+.rocket-card img {
+  width: 200px;
+  height: auto;
+}
+
+.info-rocket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reserved-button,
+.cancel-button {
+  background-color: var(--button-rockets-background, dodgerblue);
+  color: var(--button-rockets-color, white);
+  width: 150px;
+  padding: 10px 3px;
+  border-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.rocket-reserved {
+  background-color: var(--badge-rockets-background);
+  color: var(--badge-rockets-color);
+  margin-right: 10px;
+  padding-inline: 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.cancel-button {
+  background-color: var(--button-cancel-rocket-bg);
+  color: var(--button-cancel-rocket-color);
+  border: 1px solid var(--button-cancel-rocket-color);
+}
+
+@media (max-width: 415px) {
+  .rocket-card {
+    flex-direction: column;
+  }
+
+  .rocket-card img {
+    width: auto;
+  }
+}

@@ -1,0 +1,33 @@
+nav {
+  justify-content: space-between;
+  padding: 2% 5%;
+  border-bottom: 1px solid var(--badge-border-color);
+}
+
+.header {
+  align-items: center;
+  gap: 10px;
+}
+
+nav img {
+  width: 50px;
+}
+
+.navlinks {
+  gap: 8px;
+  align-items: center;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: blue;
+}
+
+.navlinks a:last-child {
+  border-left: 2px solid black;
+  padding-left: 8px;
+}
+
+.navlinks a.active {
+  text-decoration: underline;
+}

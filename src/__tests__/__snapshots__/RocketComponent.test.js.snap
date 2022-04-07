@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components test Reserved Rockets test 1`] = `
+<div
+  className="reserved-container"
+>
+  <h2>
+    My Rockets
+  </h2>
+  <ul
+    className="rockets-reserved"
+  >
+    <li>
+      Falcon 1
+    </li>
+    <li>
+      Falcon 2
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Components test RocketCard test 1`] = `
+<div
+  className="rocket-card"
+>
+  <img
+    alt="rocket type"
+    height={150}
+    src="https://imgur.com/DaCfMsj.jpg"
+    width={200}
+  />
+  <div
+    className="info-rocket"
+  >
+    <h3>
+      Falcon 1
+    </h3>
+    <p>
+      The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch vehicle to go into orbit around the Earth.
+    </p>
+    <button
+      className="reserved-button"
+      data-id={1}
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Components test Rockets rendering test 1`] = `
+<h3>
+  Fetching data please wait...
+</h3>
+`;
+
+exports[`Components test RocketsList test 1`] = `
+<div
+  className="rocketContainer"
+>
+  <div
+    className="rocket-card"
+  >
+    <img
+      alt="rocket type"
+      height={150}
+      src="https://imgur.com/DaCfMsj.jpg"
+      width={200}
+    />
+    <div
+      className="info-rocket"
+    >
+      <h3>
+        Falcon 1
+      </h3>
+      <p>
+        Short description
+      </p>
+      <button
+        className="reserved-button"
+        data-id={1}
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </div>
+  <div
+    className="rocket-card"
+  >
+    <img
+      alt="rocket type"
+      height={150}
+      src="https://imgur.com/DaCfMsj.jpg"
+      width={200}
+    />
+    <div
+      className="info-rocket"
+    >
+      <h3>
+        Falcon 2
+      </h3>
+      <p>
+        Short description
+      </p>
+      <button
+        className="reserved-button"
+        data-id={2}
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </div>
+</div>
+`;

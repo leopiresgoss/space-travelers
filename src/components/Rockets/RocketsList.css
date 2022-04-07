@@ -1,0 +1,7 @@
+.rocketContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
+  margin: 20px auto;
+}
