@@ -2,9 +2,9 @@ import fetchMissionsData from '../../services/missionsService';
 import { fetchReservedMissions, storeReservedMissions } from '../../services/missionLocalStorage';
 
 // Actions
-const GET_MISSIONS = 'GET_MISSIONS';
-const JOIN_MISSION = 'JOIN_MISSION';
-const LEAVE_MISSION = 'LEAVE_MISSION';
+export const GET_MISSIONS = 'GET_MISSIONS';
+export const JOIN_MISSION = 'JOIN_MISSION';
+export const LEAVE_MISSION = 'LEAVE_MISSION';
 
 // Reducer
 export default function reducer(state = [], action) {
