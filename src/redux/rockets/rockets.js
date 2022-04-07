@@ -1,7 +1,7 @@
 import saveToLocalStorage, { updateReserved } from './localStorage';
 
 const GETROCKETS_BEGIN = 'space-travelers/rockets/GETROCKETSBEGIN';
-const GETROCKETS_SUCCESS = 'space-travelers/rockets/GETROCKETSSUCCESS';
+export const GETROCKETS_SUCCESS = 'space-travelers/rockets/GETROCKETSSUCCESS';
 const GETROCKETS_FAILURE = 'space-travelers/rockets/GETROCKETSFAILURE';
 const RESERVEDROCKET = 'space-travelers/rockets/RESERVEDROCKET';
 const CANCELROCKET = 'space-travelers/rockets/CANCELROCKET';
