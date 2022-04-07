@@ -60,7 +60,10 @@ export default function reducer(state = INITIAL_STATE, action) {
         fetching: true,
       };
     case GETROCKETS_FAILURE:
-      return state;
+      return {
+        ...state,
+        fetching: false,
+      };
     case RESERVEDROCKET:
       newRockets = state.rockets.map((rocket) => {
         if (rocket.id !== Number(action.payload)) return rocket;

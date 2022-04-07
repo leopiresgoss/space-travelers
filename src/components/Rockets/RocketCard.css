@@ -41,7 +41,7 @@
   border: 1px solid var(--button-cancel-rocket-color);
 }
 
-@media (max-width: 390px) {
+@media (max-width: 415px) {
   .rocket-card {
     flex-direction: column;
   }
